@@ -1,0 +1,25 @@
+<mat-card class="card">
+    <mat-card-title>Detalle del producto</mat-card-title>
+    <mat-card-content class="card-content">
+       
+       <p>
+        <mat-icon>label</mat-icon><strong>Nombre:</strong>{{product.name}}
+       </p>
+       <p>
+        <mat-icon>shopping_cart</mat-icon><strong>Stock:</strong>{{product.stock}}
+       </p>
+       <p>
+        <mat-icon>label</mat-icon><strong>Precio:</strong>{{product.price}}
+       </p>
+       <p>
+        <mat-icon>label</mat-icon><strong>Activado:</strong>{{product.active}}
+       </p>
+       <p>
+        <mat-icon>calendar_today</mat-icon><strong>Fecha de alta:</strong>{{product.date_added}}
+       </p>
+       <p>
+        <mat-icon>category</mat-icon><strong>Categoria:</strong>  {{product.category?.name}}
+       </p>
+    </mat-card-content>
+</mat-card>
+
