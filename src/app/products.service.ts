@@ -21,6 +21,16 @@ export class ProductsService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const body = JSON.stringify({id: p_id});
     return this.http.post(url, body,{headers});
+
   }
+
+  newProduct(product: any): void{
+    const url = 'http://localhost:30030/products/add';
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const body= product;
+    this.http.post(url, body, {headers}).subscribe();
+
+  }
+
 
 }
