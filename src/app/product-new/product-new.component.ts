@@ -8,18 +8,27 @@ import { Router } from '@angular/router';
   selector: 'app-product-new',
   templateUrl: './product-new.component.html',
   styleUrls: ['./product-new.component.css']
+
 })
+
 
 export class ProductNewComponent implements OnInit {
   product: Product = new Product();
   category: Category = new Category();
+  active: string;
 
   constructor (private router: Router, private productsService: ProductsService) { }
 
   ngOnInit() {
   }
 
+
   newProduct(){
+    if(this.active == "true"){
+      this.product.active = true;
+    }else{
+      this.product.active = false;
+    }
 
     const  product = {
       name: this.product.name,
@@ -27,7 +36,7 @@ export class ProductNewComponent implements OnInit {
       price: this.product.price,
       active: this.product.active,
       date_added: this.product.date_added,
-      category: this.category.id         
+      category: this.category         
 
     }
     this.productsService.newProduct(product);

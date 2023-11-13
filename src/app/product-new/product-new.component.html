@@ -8,24 +8,24 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label> Stock </mat-label>
-                    <input matInput type="text" name = 'stock' [(ngModel)]="product.stock">                                              
+                    <input matInput type="number" name = 'stock' [(ngModel)]="product.stock">                                              
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label> Precio </mat-label>
-                    <input matInput type="text" name = 'price' [(ngModel)]="product.price">                           
+                    <input matInput type="number" name = 'price' [(ngModel)]="product.price">                           
                 </mat-form-field>
-                <mat-form-field appearance="outline">
-                    <mat-label> Activo </mat-label>
-                    <input matInput type="text" name = 'active' [(ngModel)]="product.active">                           
-                </mat-form-field>
+                                              
                 <mat-form-field appearance="outline">
                     <mat-label>Fecha de Alta </mat-label>
-                    <input matInput type="text" name = 'date_added' [(ngModel)]="product.date_added">                           
+                    <input matInput type="date" name = 'date_added' [(ngModel)]="product.date_added">                           
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label> Categoría </mat-label>
                     <input matInput type="text" name = 'category' [(ngModel)]="category.id">                           
                 </mat-form-field>
+                <mat-radio-group aria-label="Select" name="active" [(ngModel)]="active">                        
+                    <mat-radio-button value="true">Activado</mat-radio-button>                                                                 
+                </mat-radio-group>
                 <div class="buttons">
                     <button mat-raised-button color="primary" type="submit">
                         <mat-icon>save</mat-icon>
