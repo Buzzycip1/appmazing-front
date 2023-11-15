@@ -3,6 +3,7 @@ import { Product } from '../model/Products';
 import { Category } from '../model/Category';
 import { ProductsService } from '../products.service';
 import { Router } from '@angular/router';
+import { CategoriesService } from '../categories.service';
 
 @Component({
   selector: 'app-product-new',
@@ -11,21 +12,29 @@ import { Router } from '@angular/router';
 
 })
 
-
 export class ProductNewComponent implements OnInit {
   product: Product = new Product();
   category: Category = new Category();
   active: string;
 
-  constructor (private router: Router, private productsService: ProductsService) { }
+  categories: []; 
 
-  ngOnInit() {
+  constructor (private router: Router, private productsService: ProductsService, private categoriesService: CategoriesService  ) { }
+
+  // llamada al método para mostrar las distintas categorias. 
+
+  ngOnInit(): void {
+    this.categoriesService.getCategories().subscribe(data =>{
+      this.categories = data;
+      //console.log(this.categories);
+    }) 
+       
   }
-
-
+      
   newProduct(){
     if(this.active == "true"){
       this.product.active = true;
+
     }else{
       this.product.active = false;
     }
@@ -39,6 +48,9 @@ export class ProductNewComponent implements OnInit {
       category: this.category         
 
     }
+
+ 
+    
     this.productsService.newProduct(product);
     this.navigateToHome(); 
 

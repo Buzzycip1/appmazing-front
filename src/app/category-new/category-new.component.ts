@@ -18,8 +18,7 @@ export class CategoryNewComponent implements OnInit {
   }
 
   newCategory(){ 
-    
-    
+       
 
     const category = {
       name: this.name

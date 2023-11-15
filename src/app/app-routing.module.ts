@@ -8,20 +8,24 @@ import { ContactNewComponent } from './contact-new/contact-new.component';
 import { ProductNewComponent } from './product-new/product-new.component';
 import { CategoryHomeComponent } from './category-home/category-home.component';
 import { CategoryNewComponent } from './category-new/category-new.component';
+import { ContactEditComponent } from './contact-edit/contact-edit.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 
 const routes: Routes = [
   {path: 'contacts', component: ContactHomeComponent},
   {path: 'contact/new', component: ContactNewComponent},
   {path: 'contact/:id', component: ContactDetailComponent},
+  {path: 'contact/edit/:id', component: ContactEditComponent},
   {path: 'products', component: ProductHomeComponent},
   {path: 'product/new', component: ProductNewComponent},
   {path: 'product/:id', component: ProductDetailComponent},
+  {path: 'product/edit/:id', component: ProductEditComponent},
   {path: 'categories', component: CategoryHomeComponent},
   {path: 'category/new', component: CategoryNewComponent}
-];
 
-
+]
+  
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
