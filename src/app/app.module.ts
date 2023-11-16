@@ -19,6 +19,8 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ContactDeleteComponent } from './contact-delete/contact-delete.component';
 import { ProductDeleteComponent } from './product-delete/product-delete.component';
+import { ChartsComponent } from './charts/charts.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ProductDeleteComponent } from './product-delete/product-delete.componen
     ContactEditComponent,
     ProductEditComponent,
     ContactDeleteComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    ChartsComponent
+  
   ],
   entryComponents:[ContactDeleteComponent, ProductDeleteComponent],
 
@@ -53,6 +57,8 @@ import { ProductDeleteComponent } from './product-delete/product-delete.componen
     MatRadioModule,
     MatSelectModule,
     MatDialogModule,
+    NgxChartsModule
+    
   
   ],
 
