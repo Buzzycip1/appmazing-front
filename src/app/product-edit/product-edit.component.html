@@ -15,21 +15,20 @@
                     <input matInput type="number" name = 'price' [(ngModel)]="product.price">                           
                 </mat-form-field>                                              
                 <mat-form-field appearance="outline">
-                    <mat-label>Fecha de Alta </mat-label>
-                    <input matInput type="date" name = 'date_added' [(ngModel)]="product.date_added">                           
+                    <mat-label>Fecha de Alta </mat-label>                   
+                    <input matInput type ="date" name = 'date_added' [(ngModel)]="product.date_added">                           
                 </mat-form-field>
                  <mat-form-field>
                     <mat-form-field appearance="outline">
                     <mat-label>Categorias</mat-label>
-                    <mat-select  [(ngModel)]= "product.category.id" name = "categories">
+                    <mat-select  [(ngModel)]= "product.category.id" name = 'categories'>
                         <mat-option *ngFor = "let category of categories"  [value]= "category.id">
                               {{category.name}}
                       </mat-option>
-                    </mat-select>
-                    </mat-form-field>
-                </mat-form-field>           
-               
-                <mat-radio-group aria-label="Select" name="active" [(ngModel)]="active">                        
+                     </mat-select>
+                 </mat-form-field>
+                </mat-form-field>         
+                <mat-radio-group aria-label="Select" name="active" [(ngModel)]="product.active">                        
                     <mat-radio-button value="true">Activado</mat-radio-button>                                                                 
                 </mat-radio-group>
                 <div class="buttons">

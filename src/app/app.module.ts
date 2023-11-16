@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactHomeComponent } from './contact-home/contact-home.component';
-import { MatButtonModule, MatCardModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule, MatTableModule, MatToolbarModule } from '@angular/material';
+import { MAT_DATE_LOCALE, MatButtonModule, MatCardModule, MatDialogModule, MatIconModule, MatInputModule, MatRadioModule, MatSelectModule, MatTableModule, MatToolbarModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { ProductHomeComponent } from './product-home/product-home.component';
@@ -17,6 +16,9 @@ import { CategoryHomeComponent } from './category-home/category-home.component';
 import { CategoryNewComponent } from './category-new/category-new.component';
 import { ContactEditComponent } from './contact-edit/contact-edit.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import { CommonModule, DatePipe } from '@angular/common';
+import { ContactDeleteComponent } from './contact-delete/contact-delete.component';
+import { ProductDeleteComponent } from './product-delete/product-delete.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,12 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     CategoryHomeComponent,
     CategoryNewComponent,
     ContactEditComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    ContactDeleteComponent,
+    ProductDeleteComponent
   ],
+  entryComponents:[ContactDeleteComponent, ProductDeleteComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -45,9 +51,9 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     FormsModule,
     MatInputModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule,
   
-
   ],
 
   providers: [],

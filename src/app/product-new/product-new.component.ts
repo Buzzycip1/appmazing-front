@@ -16,19 +16,19 @@ export class ProductNewComponent implements OnInit {
   product: Product = new Product();
   category: Category = new Category();
   active: string;
-
   categories: []; 
+
 
   constructor (private router: Router, private productsService: ProductsService, private categoriesService: CategoriesService  ) { }
 
-  // llamada al método para mostrar las distintas categorias. 
+
 
   ngOnInit(): void {
-    this.categoriesService.getCategories().subscribe(data =>{
+    this.categoriesService.getCategories().subscribe(data =>{    // el evento constructor,  hace la llamada al método para mostrar los datos de  las distintas categorias. 
       this.categories = data;
       //console.log(this.categories);
     }) 
-       
+         
   }
       
   newProduct(){
@@ -48,8 +48,6 @@ export class ProductNewComponent implements OnInit {
       category: this.category         
 
     }
-
- 
     
     this.productsService.newProduct(product);
     this.navigateToHome(); 

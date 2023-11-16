@@ -32,12 +32,21 @@ export class ProductsService {
 
   }
 
-
   updateProduct(product: any): void{
     const url = 'http://localhost:30030/products/update';
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const body= product;
     this.http.put(url, body, {headers}).subscribe();
+  }
+
+  deleteProduct(productId: number):void{
+    const url = 'http://localhost:30030/products/delete';
+    const body = {id: productId};
+    const options = {
+      body:body,
+      headers: new HttpHeaders()
+    };
+    this.http.delete(url, options).subscribe();
   }
 
 
