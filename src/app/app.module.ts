@@ -62,7 +62,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   
   ],
 
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue:'es-ES'}, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,30 +5,81 @@
   <mat-card-content>
     <div class="chart-row">
       <div>
-        <p><strong>Intial surname</strong></p>
+        <p><strong>Tabla de contactos versus la inicial del primer apellido </strong></p>
         <ngx-charts-bar-vertical
-          [view]="[400, 300]"
+          [view]="[400,300]"
           [results]="initialLetter"
           [xAxis]="true"
           [yAxis]="true"
           [legend]="false"
           [showXAxisLabel]="true"
           [showYAxisLabel]="true"
-          xAxisLabel="Initial of surname"
-          yAxisLabel="Number of Contacts">
+          xAxisLabel="Inicial del apellido"
+          yAxisLabel="Numero de contactos">
         </ngx-charts-bar-vertical>
       </div>
       <div>
-        <p><strong>Lengh of name</strong></p>
+        <p><strong>Tabla de contactos versus longitud del apellido completo</strong></p>
+        <ngx-charts-line-chart           
+        [view]="[400,300]"
+        [results]="contactsByFullName"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        xAxisLabel="Longitud del apellido completo"
+        yAxisLabel="Numero de contactos">
+        </ngx-charts-line-chart>
       </div>
     </div>
     <div class="chart-row">
       <div>
-        <p><strong>Extensions</strong></p>
+        <p><strong>Extensiones de email</strong></p>
+        <ngx-charts-pie-chart
+            [view]="[400,300]"
+            [results]="emailExtensions"
+            [labels]="true"
+            [doughnut]="true">        
+        </ngx-charts-pie-chart>        
       </div>
       <div>
-        <p><strong>Prefix</strong></p>
+        <p><strong>Tabla de contactos versus número de prefijos</strong></p>
+        <ngx-charts-bar-horizontal
+        [view]="[400,300]"
+        [results]="phonePrefixData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        xAxisLabel="Profijo del teléfono"
+        yAxisLabel="Numero de contactos">
+        </ngx-charts-bar-horizontal>
       </div>
     </div>
   </mat-card-content>
+</mat-card>
+<mat-card>
+    <mat-card-title>
+        Charts - Products 
+    </mat-card-title>     
+<mat-card-content>
+    <div class="chart-row">
+        <div>
+          <p><strong>Tabla de productos versus stock</strong></p>
+          </div>
+        <div>
+          <p><strong>Tabla de productos versus categorias</strong></p>
+         </div>
+      </div>
+      <div class="chart-row">
+        <div>
+          <p><strong>Grafica de Productos </strong></p>
+              
+        </div>
+        <div>
+          <p><strong>Tabla de productos versus fecha de activación</strong></p>
+          </div>
+      </div>
+</mat-card-content>
 </mat-card>
