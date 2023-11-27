@@ -184,11 +184,11 @@ export class ChartsComponent implements OnInit {
 
   getStockRange(stock: number): string {
     if(stock <30){
-      return '1. Reponer';
+      return '1. De 0 a 30';
     }else if(stock >= 30 && stock <=200){
-      return '2. Revisar';
+      return '2. 30 a 200';
     } else if(stock > 200){
-      return '3. Garantizado';
+      return '3. mayor 200';
     } 
   }  
 }
