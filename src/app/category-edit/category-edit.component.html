@@ -1,0 +1,22 @@
+<mat-card class = "card">
+    <mat-card-title>  Editar Categoría  </mat-card-title>
+        <mat-card-content class = "card-content">
+            <form (submit)="updateCategory()">
+                <mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Categorias</mat-label>
+                        <input matInput type="name" name = 'category' [(ngModel)]="category.name">                                              
+                    </mat-form-field>
+                </mat-form-field>
+                      
+                <div class="buttons">
+                    <button mat-raised-button color="primary" type="submit">
+                        <mat-icon>save</mat-icon>
+                    </button>
+                    <button mat-raised-button color="warn" type="button" (click)="cancelUpdate()">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </div>       
+            </form>
+        </mat-card-content>
+</mat-card>

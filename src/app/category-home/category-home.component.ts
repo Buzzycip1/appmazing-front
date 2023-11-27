@@ -23,7 +23,11 @@ export class CategoryHomeComponent implements OnInit {
     this.router.navigate(['/category', row.id]);
   }
 
-  displayedColumns: string[] = ['id', 'name'];
+  editCategoryDetail(category: any){
+    this.router.navigate(['/category/edit', category]);
+  }
+
+  displayedColumns: string[] = ['id', 'name', 'actions'];
 
 }
 
